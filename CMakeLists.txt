@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.0)
+project(HelloSLAM)
+add_executable( helloSLAM helloSLAM.cpp )
+# Set ( CMAKE_BUILD_TYPE "Debug" )
+# add_library( hello libHelloSLAM.cpp )
+add_library( hello_shared SHARED libHelloSLAM.cpp )
+add_executable(useHello useHello.cpp)
+target_link_libraries(useHello hello_shared)
+
+include_directories("/opt/homebrew/Cellar/eigen/3.4.0_1/include/eigen3")
+add_executable(eigenMatrix eigenMatrix.cpp)

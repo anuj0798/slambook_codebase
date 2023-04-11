@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/c++  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/useHello.dir/useHello.cpp.o -o useHello  -Wl,-rpath,/Users/anujagrawal/Documents/slambook_codebase/build libhello_shared.dylib 
