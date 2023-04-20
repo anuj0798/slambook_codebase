@@ -50,8 +50,23 @@ int main(int argc, char **argv){
     Matrix<double, MATRIX_SIZE, 1> v_Nd = MatrixXd::Random(MATRIX_SIZE, 1);
 
     clock_t time_stt = clock(); 
-    Matrix<double, MATRIX_SIZE, 1> x = matrix_NN.inverse() ∗ v_Nd;
-    // cout << "time of normal inverse is " << 1000 ∗ (clock() − time_stt) / (double)CLOCKS_PER_SEC << "ms" << endl; cout << "x = " << x.transpose() << endl;
+    Matrix<double, MATRIX_SIZE, MATRIX_SIZE> x_inv = matrix_NN.inverse();
+    Matrix<double, MATRIX_SIZE, 1> x= x_inv * v_Nd;
+    cout << (clock() - time_stt) * 1000 / (double)CLOCKS_PER_SEC  <<"ms"<<endl;
+    cout << x.transpose() << endl;
+
+    time_stt = clock();
+    x = matrix_NN.colPivHouseholderQr().solve(v_Nd);
+    cout << (clock() - time_stt) * 1000 / (double)CLOCKS_PER_SEC  <<"ms"<<endl;
+    cout << x.transpose() << endl;
+
+    time_stt = clock();
+    x = matrix_NN.ldlt().solve(v_Nd);
+    cout << (clock() - time_stt) * 1000 / (double)CLOCKS_PER_SEC  <<"ms"<<endl;
+    cout << x.transpose() << endl;
+
+
+
 
 
 

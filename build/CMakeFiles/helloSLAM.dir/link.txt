@@ -1,1 +1,1 @@
-/Library/Developer/CommandLineTools/usr/bin/c++  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/helloSLAM.dir/helloSLAM.cpp.o -o helloSLAM 
+/usr/bin/c++    -rdynamic CMakeFiles/helloSLAM.dir/helloSLAM.cpp.o  -o helloSLAM 
